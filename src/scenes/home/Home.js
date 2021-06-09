@@ -1,48 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {
-  StyleSheet, Text, View, StatusBar,
-} from 'react-native'
-import Button from 'components/Button'
-import { colors } from 'theme'
+import React, { useEffect, useState } from 'react'
+import { Text, View, ScrollView, StatusBar, useColorScheme } from 'react-native'
+import styles from './styles'
+import { firebase } from '../../firebase/config'
 
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.lightGrayPurple,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-})
+export default function Home(props) {
+  const userData = props.extraData
+  const [token, setToken] = useState('')
+  const scheme = useColorScheme()
 
-const Home = ({ navigation }) => (
-  <View style={styles.root}>
-    <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Home</Text>
-    <Button
-      title="Go to Details"
-      color="white"
-      backgroundColor={colors.lightPurple}
-      onPress={() => {
-        navigation.navigate('Details', { from: 'Home' })
-      }}
-    />
-  </View>
-)
+  useEffect(() => {
+    const tokenListener = firebase.firestore()
+      .collection('tokens')
+      .doc(userData.id)
+      .get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            const data = doc.data()
+            setToken(data)
+        } else {
+            console.log("No such document!");
+        }
+      }).catch((error) => {
+          console.log("Error getting document:", error);
+      });
+    return () => tokenListener()
+  }, []);
 
-Home.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func,
-  }),
+  return (
+    <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
+      <View style={{ flex: 1, width: '100%' }}>
+        <ScrollView style={styles.main}>
+          <Text style={scheme === 'dark' ? styles.darkfield : styles.field}>Mail:</Text>
+          <Text style={scheme === 'dark' ? styles.darktitle : styles.title}>{userData.email}</Text>
+          <Text style={scheme === 'dark' ? styles.darkfield : styles.field}>Expo push token:</Text>
+          <Text style={scheme === 'dark' ? styles.darktitle : styles.title}>{token.token}</Text>
+        </ScrollView>
+      </View>
+    </View>
+  )
 }
-
-Home.defaultProps = {
-  navigation: { navigate: () => null },
-}
-
-export default Home

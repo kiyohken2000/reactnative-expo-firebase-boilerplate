@@ -3,7 +3,7 @@ name: Expo CI
 on:
   push:
     branches:
-      - master
+      - branches
 jobs:
   publish:
     name: Install and publish

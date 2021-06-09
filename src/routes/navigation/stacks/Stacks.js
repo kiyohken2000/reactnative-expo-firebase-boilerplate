@@ -1,11 +1,10 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { colors } from 'theme'
-import Home from 'scenes/home'
-import Profile from 'scenes/profile'
-import Details from 'scenes/details'
-import HeaderLeft from './HeaderLeft'
-import HeaderTitle from './HeaderTitle'
+import Login from '../../../scenes/login'
+import Registration from '../../../scenes/registration'
+import Home from '../../../scenes/home'
+import Profile from '../../../scenes/profile'
+import Detail from '../../../scenes/details'
 
 // ------------------------------------
 // Constants
@@ -13,64 +12,50 @@ import HeaderTitle from './HeaderTitle'
 
 const Stack = createStackNavigator()
 
-const navigationProps = {
-  headerTintColor: 'white',
-  headerStyle: { backgroundColor: colors.darkPurple },
-  headerTitleStyle: { fontSize: 18 },
-}
-
 // ------------------------------------
 // Navigators
 // ------------------------------------
 
-export const HomeNavigator = () => (
-  <Stack.Navigator
-    initialRouteName="Home"
-    headerMode="screen"
-    screenOptions={navigationProps}
-  >
-    <Stack.Screen
-      name="Home"
-      component={Home}
-      options={({ navigation }) => ({
-        title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
-    />
-    <Stack.Screen
-      name="Details"
-      component={Details}
-      options={({ navigation }) => ({
-        title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
-    />
-  </Stack.Navigator>
-)
+export const LoginNavigator = (props) => {
+  const navigationProps = props.navigationProps
+  return (
+    <Stack.Navigator headerMode="screen" screenOptions={navigationProps}>
+      <Stack.Screen
+        name="Login"
+        component={Login}
+      />
+      <Stack.Screen
+        name="Registration"
+        component={Registration}
+      />
+    </Stack.Navigator>
+  )
+}
 
-export const ProfileNavigator = () => (
-  <Stack.Navigator
-    initialRouteName="Profile"
-    headerMode="screen"
-    screenOptions={navigationProps}
-  >
-    <Stack.Screen
-      name="Profile"
-      component={Profile}
-      options={({ navigation }) => ({
-        title: 'Profile',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
-    />
-    <Stack.Screen
-      name="Details"
-      component={Details}
-      options={{
-        title: 'Details',
-      }}
-    />
-  </Stack.Navigator>
-)
+
+export const HomeNavigator = (props) => {
+  const user = props.user
+  const navigationProps = props.navigationProps
+  return (
+    <Stack.Navigator headerMode="screen" screenOptions={navigationProps}>
+      <Stack.Screen name="Home">
+        {props => <Home {...props} extraData={user} />}
+      </Stack.Screen>
+    </Stack.Navigator>
+  )
+}
+
+export const ProfileNavigator = (props) => {
+  const user = props.user
+  const navigationProps = props.navigationProps
+  return (
+    <Stack.Navigator headerMode="screen" screenOptions={navigationProps}>
+      <Stack.Screen name="Profile">
+        {props => <Profile {...props} extraData={user} />}
+      </Stack.Screen>
+      <Stack.Screen name="Detail">
+        {props => <Detail {...props} extraData={user} />}
+      </Stack.Screen>
+    </Stack.Navigator>
+  )
+}
