@@ -76,7 +76,7 @@
 
 <img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img5.png' width='80%'>
 
-**Step 5: Copy the API Key and connect Firebase**
+**Step 5: Copy the API Key**
 
 - On the Project Overview, click on the "Web" icon since we are building on Expo.
 - Tthen give it a name, click "Register app".
@@ -88,7 +88,7 @@
 
 - Write the copied API key in your app.
 
-**src\firebase\config.js**
+`src\firebase\config.js`
 
 ```javascript
 import * as firebase from 'firebase'
