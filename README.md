@@ -2,7 +2,7 @@
 
 - [Expo link](https://expo.io/@votepurchase/reactnative-expo-firebase-boilerplate)
 
-## Gallery
+## Screens
 
 <img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img1.jpg' width='80%'>
 
@@ -87,7 +87,7 @@ yarn install
 **Step 5: Copy the API Key**
 
 - On the Project Overview, click on the "Web" icon since we are building on Expo.
-- Tthen give it a name, click "Register app".
+- Then give it a name, click "Register app".
 - It will show you the Firebase configuration, copy the SDK keys, we will use it in the next step.
 
 <img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img2.png' width='80%'>
@@ -121,13 +121,24 @@ if (!firebase.apps.length) {
 export { firebase };
 ```
 
-### 3. Update app.json
+### 3. Update app.json and default avatar
 
 Replace the name and Slug with yours.
 
 ```
 "name": "your-app-name",
 "slug": "your-app-name",
+```
+
+**src\scenes\registration\Registration.js**
+
+```javascript
+const data = {
+  id: uid,
+  email,
+  fullName,
+  avatar: 'Your default icon URL',
+};
 ```
 
 ### 4. Run Your App
