@@ -11,7 +11,7 @@ import Constants from 'expo-constants'
 export default function Detail({ route, navigation }) {
   const [fullName, setFullName] = useState('')
   const [progress, setProgress] = useState('')
-  const [avatar, setAvatar] = useState('https://firebasestorage.googleapis.com/v0/b/reactnative-expo-boilerplate.appspot.com/o/icon.png?alt=media&token=7f2812b7-e1d9-48e3-9720-e79d6650cea5')
+  const [avatar, setAvatar] = useState('')
   const userData = route.params.userData
   const scheme = useColorScheme()
 
