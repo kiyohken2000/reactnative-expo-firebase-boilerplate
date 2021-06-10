@@ -10,7 +10,7 @@
 
 - React Native 
 - Expo
-- Firebase(Authentication, Firestore, Storage)
+- Firebase(Authentication, Firestore, Cloud Storage)
 
 ## Libraries
 
@@ -34,14 +34,22 @@
 - Handling persisted login credentials
 - Writing to Firestore Database
 - Reading from Firestore Database
-- Uploading images to Firebase Storage
+- Uploading images to Cloud Storage
 - Update user profile
 - Dynamic switching of dark themes by device appearance
 - Retrieving Expo push tokens and saving them to Firestore
 
 ## How to use
 
-### 1. Setting up Firebase
+### 1. Install
+
+```
+git clone https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate.git
+cd reactnative-expo-firebase-boilerplate
+yarn install
+```
+
+### 2. Setting up Firebase
 
 **Step 1: Create a Google Firebase Account**
 
@@ -86,7 +94,7 @@
 
 **Step 6: Connect Firebase**
 
-- Write the copied API key in your app.
+- Write the copied API Key in your app.
 
 `src\firebase\config.js`
 
@@ -113,7 +121,7 @@ if (!firebase.apps.length) {
 export { firebase };
 ```
 
-### 2. Update app.json
+### 3. Update app.json
 
 Replace the name and Slug with yours.
 
@@ -122,12 +130,9 @@ Replace the name and Slug with yours.
 "slug": "your-app-name",
 ```
 
-### 3. Install
+### 4. Run Your App
 
 ```
-git clone https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate.git
-cd reactnative-expo-firebase-boilerplate
-yarn install
 expo start
 ```
 
