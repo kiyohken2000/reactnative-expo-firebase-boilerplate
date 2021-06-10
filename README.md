@@ -4,7 +4,7 @@
 
 ## Gallery
 
-<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img1.jpg' width='32%'>
+<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img1.jpg' width='80%'>
 
 ## Infrastructure
 
@@ -57,7 +57,7 @@
 - Click on the second tab where it said "Sign-In method"
 - Enable all the Sign-in method you would like to enable. For now, we will enable the "Email/Password" option.
 
-<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img3.png' width='32%'>
+<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img3.png' width='80%'>
 
 **Step 3: Configure Firebase Console Firestore**
 
@@ -66,7 +66,7 @@
 - Select the "Cloud Firestore location", click "Enable"
 - Create the "users" and "tokens" collections. An empty document is fine.
 
-<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img4.png' width='32%'>
+<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img4.png' width='80%'>
 
 **Step 4: Create a folder in Cloud Storage**
 
@@ -74,7 +74,7 @@
 - Create an empty "avatar" folder.
 - Upload the image file "icon.png" of your choice. This is the default icon for app users.
 
-<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img5.png' width='32%'>
+<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img5.png' width='80%'>
 
 **Step 5: Copy the API Key and connect Firebase**
 
@@ -82,7 +82,7 @@
 - Tthen give it a name, click "Register app".
 - It will show you the Firebase configuration, copy the SDK keys, we will use it in the next step.
 
-<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img2.png' width='32%'>
+<img src='https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/__DELELE_ME__/img2.png' width='80%'>
 
 **Step 6: Connect Firebase**
 
