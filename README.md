@@ -153,5 +153,4 @@ This project is available under the MIT license. See the [LICENSE](https://githu
 
 ## TODO
 
-- Deleting account
 - Add Sign in with Google

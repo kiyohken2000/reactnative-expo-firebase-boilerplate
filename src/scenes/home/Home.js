@@ -9,7 +9,7 @@ export default function Home(props) {
   const scheme = useColorScheme()
 
   useEffect(() => {
-    const tokenListener = firebase.firestore()
+    firebase.firestore()
       .collection('tokens')
       .doc(userData.id)
       .get().then((doc) => {
@@ -23,7 +23,6 @@ export default function Home(props) {
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
-    return () => tokenListener()
   }, []);
 
   return (
