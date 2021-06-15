@@ -14,7 +14,7 @@
 
 ## Libraries
 
-- Expo 41
+- Expo
 - axios
 - react-navigation
 - expo-constants
@@ -26,11 +26,12 @@
 - react-native-svg
 - react-native-vector-icons
 
-## Feature
+## Features
 
 - Bottom tab and Stack navigation
 - Registration with E-mail & Password
 - Login with E-mail and Password
+- Deleting an account
 - Handling persisted login credentials
 - Writing to Firestore Database
 - Reading from Firestore Database
@@ -150,7 +151,3 @@ expo start
 ## Licence
 
 This project is available under the MIT license. See the [LICENSE](https://github.com/kiyohken2000/reactnative-expo-firebase-boilerplate/blob/master/LICENSE) file for more info.
-
-## TODO
-
-- Add Sign in with Google
