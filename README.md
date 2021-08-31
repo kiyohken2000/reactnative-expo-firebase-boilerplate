@@ -1,3 +1,7 @@
+# I made version 2
+
+[ReactNative-Expo-Firebase-Boilerplate-v2](https://github.com/kiyohken2000/ReactNative-Expo-Firebase-Boilerplate-v2)
+
 # React Native Expo with Firebase
 
 - [Expo link](https://expo.io/@votepurchase/reactnative-expo-firebase-boilerplate)
