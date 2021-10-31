@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, ScrollView, useColorScheme } from 'react-native'
 import styles from './styles'
 import { firebase } from '../../firebase/config'
-import { Restart } from 'fiction-expo-restart'
 import { Avatar } from 'react-native-elements'
 import Dialog from "react-native-dialog"
 import Spinner from 'react-native-loading-spinner-overlay'
+import { Restart } from '../../components/reload/reload'
 
 export default function Profile(props) {
   const userData = props.extraData
