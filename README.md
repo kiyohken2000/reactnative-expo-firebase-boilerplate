@@ -1,5 +1,7 @@
 # I made version 2
 
+This project is deprecated and has been moved to version 2.
+
 [ReactNative-Expo-Firebase-Boilerplate-v2](https://github.com/kiyohken2000/ReactNative-Expo-Firebase-Boilerplate-v2)
 
 # React Native Expo with Firebase
